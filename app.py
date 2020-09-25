@@ -31,7 +31,8 @@ def viewusers():
     db = get_db()
     cursor = db.execute('select id, name, age from people')
     results = cursor.fetchall()
-    return f"<h1>The Id is {results[0]['id']}.<br> The Name is {results[0]['name']}. <br> The age is {results[0]['age']}. </h1>"
+    return f"<h1>The Id is {results[0]['id']}.<br> The Name is {results[0]['name']}. 
+            <br> The age is {results[0]['age']}. </h1>"
 
 
 if __name__ == '__main__':
