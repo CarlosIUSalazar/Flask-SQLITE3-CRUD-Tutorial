@@ -1,0 +1,39 @@
+# Mac OS files to ignore
+.DS_Store
+
+# Python-specific files to ignore
+__pycache__/
+*.pyc
+*.pyo
+
+# Flask-specific files to ignore
+instance/
+.env
+
+# Dependencies
+venv/
+venv.bak/
+
+# IDE files to ignore
+.vscode/
+*.code-workspace
+
+# Logs
+*.log
+logs/
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test files
+# test/
+# tests/
+# testing/

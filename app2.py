@@ -33,6 +33,7 @@ def viewusers():
     results = cursor.fetchall()
     return f"<h1>The Id is {results[0]['id']}.<br> The Name is {results[0]['name']}. <br> The age is {results[0]['age']}. </h1>"
 
+
 #CREATE
 @app.route('/users', methods=['POST'])
 def create_user():
@@ -42,6 +43,7 @@ def create_user():
     db.execute('INSERT INTO users (name, age) VALUES (?, ?)', [name, age])
     db.commit()
     return jsonify({'message': 'User created successfully!'})
+
 
 #READ
 @app.route('/users/<int:user_id>', methods=['GET'])
@@ -54,6 +56,7 @@ def get_user(user_id):
     return f"<h1>The Id is {result['id']}.<br> The Name is {result['name']}. <br> The age is {result['age']}. </h1>"
     #return jsonify({'id': result['id'], 'name': result['name'], 'age': result['age']})
 
+
 #UPDATE
 @app.route('/users/<int:user_id>', methods=['PUT'])
 def update_user(user_id):
@@ -64,6 +67,7 @@ def update_user(user_id):
     db.commit()
     return jsonify({'message': 'User updated successfully!'})
 
+
 #DELETE
 @app.route('/users/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
@@ -71,6 +75,7 @@ def delete_user(user_id):
     db.execute('DELETE FROM users WHERE id = ?', [user_id])
     db.commit()
     return jsonify({'message': 'User deleted successfully!'})
+
 
 if __name__ == '__main__':
     app.run(debug = True)
